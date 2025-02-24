@@ -1,24 +1,42 @@
-# Compiled class file
-*.class
+import java.util.ArrayList;
 
-# Log file
-*.log
+public class DifferenceArraysArrayLists {
+    public static void main(String[] args) {
+        // 1. Demonstrating Java Arrays
+        int[] intArray = new int[3]; // Fixed-size array
+        intArray[0] = 10;
+        intArray[1] = 20;
+        intArray[2] = 30;
+        
+        System.out.println("Array elements:");
+        for (int num : intArray) {
+            System.out.println(num);
+        }
 
-# BlueJ files
-*.ctxt
+        // intArray[3] = 40; // This would cause an ArrayIndexOutOfBoundsException
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+        // 2. Demonstrating Java ArrayList
+        ArrayList<Integer> intList = new ArrayList<>(); // Dynamic-size collection
+        intList.add(10);
+        intList.add(20);
+        intList.add(30);
+        intList.add(40); // Unlike arrays, we can add more elements dynamically
 
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
+        System.out.println("\nArrayList elements:");
+        for (int num : intList) {
+            System.out.println(num);
+        }
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-replay_pid*
+        // Demonstrating removal in ArrayList
+        intList.remove(Integer.valueOf(20)); // Removes the element 20
+        
+        System.out.println("\nArrayList after removal:");
+        for (int num : intList) {
+            System.out.println(num);
+        }
+
+        // Demonstrating size difference
+        System.out.println("\nSize of array: " + intArray.length);
+        System.out.println("Size of ArrayList: " + intList.size());
+    }
+}
